@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070816" />
+  <meta name="description" content="Portfolio of Anugrah Pratama — Graphic Designer, Video Editor, and multidisciplinary digital creative based in Bandung." />
+  <title>Anugrah Pratama — Graphic Designer & Digital Creative</title>
+  <!-- Main styles: css/style.css | Main interactions: js/script.js -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            display: ["Space Grotesk", "Inter", "ui-sans-serif", "system-ui"],
+          },
+          colors: { ink: "#070816", panel: "#0D1020" },
+          boxShadow: { glow: "0 0 70px rgba(99,102,241,.22)" },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-sans antialiased selection:bg-indigo-400/30 selection:text-white">
+  <div class="noise"></div>
+
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+    <nav class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3 sm:px-5">
+      <a href="#home" class="group flex items-center gap-3">
+        <div class="nav-avatar h-9 w-9 overflow-hidden rounded-xl border border-white/10 shadow-glow ring-1 ring-cyan-300/10">
+          <img src="assets/images/anugrah-pratama.jpg" alt="Anugrah Pratama" class="h-full w-full object-cover object-center">
+        </div>
+        <div class="hidden sm:block">
+          <p class="font-display text-sm font-semibold tracking-tight text-white">Anugrah Pratama</p>
+          <p class="text-[11px] text-slate-400">Design · Video · Technology</p>
+        </div>
+      </a>
+
+      <div class="hidden items-center gap-5 lg:flex xl:gap-7">
+        <a class="nav-link relative text-sm text-slate-300 transition hover:text-white" href="#about">About</a>
+        <a class="nav-link relative text-sm text-slate-300 transition hover:text-white" href="#projects">Projects</a>
+        <a class="nav-link relative text-sm text-slate-300 transition hover:text-white" href="#skills">Skills</a>
+        <a class="nav-link relative text-sm text-slate-300 transition hover:text-white" href="#experience">Experience</a>
+        <a class="nav-link relative text-sm text-slate-300 transition hover:text-white" href="#contact">Contact</a>
+      </div>
+
+      <div class="hidden items-center gap-2 lg:flex">
+        <button type="button" data-view-cv class="hidden items-center gap-2 rounded-xl border border-cyan-300/15 bg-cyan-300/[.06] px-4 py-2 text-sm font-medium text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-cyan-300/[.10] xl:inline-flex">
+          <i data-lucide="file-text" class="h-4 w-4"></i> View CV
+        </button>
+        <a href="mailto:grahvloid@gmail.com" class="hidden items-center gap-2 rounded-xl border border-white/10 bg-white/[.07] px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/[.11] lg:flex">
+          Let's talk <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[.05] lg:hidden">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 lg:hidden">
+      <div class="grid gap-1">
+        <a class="rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/[.06] hover:text-white" href="#about">About</a>
+        <a class="rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/[.06] hover:text-white" href="#projects">Projects</a>
+        <a class="rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/[.06] hover:text-white" href="#skills">Skills</a>
+        <a class="rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/[.06] hover:text-white" href="#experience">Experience</a>
+        <a class="rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/[.06] hover:text-white" href="#contact">Contact</a>
+        <div class="mt-1 grid grid-cols-2 gap-2">
+          <button type="button" data-view-cv class="flex items-center justify-center gap-2 rounded-xl border border-cyan-300/15 bg-cyan-300/[.06] px-3 py-3 text-sm font-medium text-cyan-100 transition hover:bg-cyan-300/[.10]">
+            <i data-lucide="file-text" class="h-4 w-4"></i> View CV
+          </button>
+          <button type="button" data-download-cv class="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[.05] px-3 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/[.09]">
+            <i data-lucide="download" class="h-4 w-4"></i> Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative flex min-h-[100svh] items-center overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-20 lg:pt-28">
+      <div class="mx-auto grid w-full max-w-6xl items-center gap-10 sm:gap-12 lg:grid-cols-[1.12fr_.88fr] lg:gap-14">
+        <div class="reveal show">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/[.06] px-3 py-1.5 text-xs font-medium text-cyan-100">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-300 opacity-75"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-cyan-300"></span>
+            </span>
+            Open to creative opportunities
+          </div>
+
+          <p class="mb-3 font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">Graphic Designer · Digital Creative · Tech Enthusiast</p>
+          <h1 class="font-display text-5xl font-bold leading-[.96] tracking-[-.05em] text-white sm:text-6xl lg:text-7xl xl:text-[5.15rem]">
+            Creative work, powered by
+            <span class="text-gradient">design &amp; technology.</span>
+          </h1>
+
+          <div class="hero-intro mt-6 max-w-2xl sm:mt-7">
+            <p class="text-base leading-8 text-slate-400 sm:text-lg">
+              I’m <span class="font-semibold text-slate-100">Anugrah Pratama, S.I.Kom.</span>, a Graphic Designer &amp; Digital Creative with a Communication Science background. I create clear, engaging visual content across design, video, social media, and UI. By combining storytelling and technology, I turn ideas into creative work that connects with audiences and supports brand goals.
+            </p>
+
+            <div class="hero-focus mt-4 inline-flex max-w-full items-center gap-2.5 rounded-full border border-white/10 bg-white/[.045] px-3.5 py-2 text-sm text-slate-400">
+              <span class="hidden whitespace-nowrap text-slate-500 sm:inline">Creative focus</span>
+              <span class="hidden h-4 w-px bg-white/10 sm:block"></span>
+              <span class="hero-focus-dot" aria-hidden="true"></span>
+              <span id="heroFocusText" class="hero-focus-text font-medium text-cyan-200">Graphic Design</span>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
+            <a href="#projects" class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-1 hover:shadow-[0_16px_45px_rgba(255,255,255,.15)]">
+              Explore my work <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i>
+            </a>
+            <button type="button" data-view-cv class="group inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-300/20 bg-cyan-300/[.07] px-5 py-3.5 text-sm font-semibold text-cyan-50 transition hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-cyan-300/[.12] hover:shadow-[0_16px_45px_rgba(34,211,238,.08)]">
+              <i data-lucide="file-text" class="h-4 w-4"></i> View CV
+            </button>
+            <button type="button" data-download-cv class="group inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[.05] px-5 py-3.5 text-sm font-semibold text-slate-200 transition hover:-translate-y-1 hover:bg-white/[.09] hover:text-white">
+              <i data-lucide="download" class="h-4 w-4 transition group-hover:translate-y-0.5"></i> Download CV
+            </button>
+            <a href="mailto:grahvloid@gmail.com" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[.05] px-5 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-1 hover:bg-white/[.09]">
+              <i data-lucide="mail" class="h-4 w-4"></i> Contact me
+            </a>
+          </div>
+
+          <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500 sm:mt-10">
+            <span class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4"></i> Bandung, West Java</span>
+            <span class="flex items-center gap-2"><i data-lucide="graduation-cap" class="h-4 w-4"></i> Communication Science · UNPAS</span>
+          </div>
+        </div>
+
+        <div class="reveal relative mx-auto w-full max-w-[440px] sm:max-w-[500px] lg:mx-0 lg:max-w-[520px] lg:justify-self-end">
+          <div class="absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-indigo-400/15 sm:h-[430px] sm:w-[430px]"></div>
+          <div class="hero-ring absolute left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-cyan-300/20 sm:h-[380px] sm:w-[380px]"></div>
+
+          <div class="hero-card glass spotlight relative mx-auto aspect-[4/5] max-w-[330px] overflow-hidden rounded-[1.65rem] p-3 shadow-glow sm:max-w-[370px] sm:rounded-[2rem] sm:p-4 lg:max-w-[390px]">
+            <div class="relative h-full overflow-hidden rounded-[1.45rem] border border-white/10 bg-gradient-to-br from-indigo-500/30 via-violet-500/15 to-cyan-400/15">
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(255,255,255,.18),transparent_30%)]"></div>
+              <div class="absolute inset-x-5 top-5 flex items-center justify-between">
+                <span class="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-[.2em] text-white/70">Creative Profile</span>
+                <i data-lucide="scan-line" class="h-5 w-5 text-cyan-200/80"></i>
+              </div>
+
+              <img
+                src="assets/images/anugrah-pratama.jpg"
+                alt="Portrait of Anugrah Pratama"
+                class="absolute inset-0 h-full w-full object-cover object-center transition duration-700 ease-out hover:scale-[1.025]"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070816]/85 via-transparent to-[#070816]/10"></div>
+              <div class="absolute inset-0 bg-[linear-gradient(115deg,rgba(99,102,241,.06),transparent_35%,rgba(34,211,238,.05))]"></div>
+
+              <div class="absolute inset-x-5 bottom-5 glass-soft rounded-2xl p-4">
+                <div class="flex items-end justify-between gap-4">
+                  <div>
+                    <p class="font-display text-lg font-semibold">Anugrah Pratama, S.I.Kom.</p>
+                    <p class="mt-1 text-xs text-slate-300">Graphic Designer · Video Editor</p>
+                  </div>
+                  <div class="grid h-10 w-10 place-items-center rounded-xl bg-white text-slate-950"><i data-lucide="move-up-right" class="h-4 w-4"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-soft absolute -left-2 top-[18%] hidden rounded-2xl p-3 sm:block"><i data-lucide="pen-tool" class="h-5 w-5 text-violet-300"></i></div>
+          <div class="glass-soft absolute -right-2 bottom-[24%] hidden rounded-2xl p-3 sm:block"><i data-lucide="code-2" class="h-5 w-5 text-cyan-300"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credibility metrics -->
+    <section class="px-4 pb-12 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-6xl items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div class="metric-card reveal glass rounded-2xl p-5 sm:p-6">
+          <div class="metric-label text-[11px] font-semibold uppercase tracking-[.18em] text-cyan-300">
+            <i data-lucide="play-circle" class="h-4 w-4 shrink-0"></i> <span>Content Performance</span>
+          </div>
+          <div class="metric-value">
+            <p class="metric-main">100K+</p>
+            <p class="metric-unit">Organic TikTok Views</p>
+          </div>
+          <p class="metric-description">Selected short-form videos I edited for <span class="font-medium text-white">DSI Agency</span> reached 100K+ organic views, demonstrating audience-focused editing and visual storytelling.</p>
+        </div>
+
+        <div class="metric-card reveal glass rounded-2xl p-5 sm:p-6">
+          <div class="metric-label text-[11px] font-semibold uppercase tracking-[.18em] text-cyan-300">
+            <i data-lucide="wrench" class="h-4 w-4 shrink-0"></i> <span>Client IT Support</span>
+          </div>
+          <div class="metric-value">
+            <p class="metric-main">IT Support</p>
+            <p class="metric-unit">Customer & After-Sales Services</p>
+          </div>
+          <p class="metric-description">Through <span class="font-medium text-white">DOT HERE GROUP</span>, I support customers with device troubleshooting, software setup, service consultation, and practical after-sales assistance.</p>
+        </div>
+
+        <div class="metric-card reveal glass rounded-2xl p-5 sm:p-6">
+          <div class="metric-label text-[11px] font-semibold uppercase tracking-[.18em] text-cyan-300">
+            <i data-lucide="package-check" class="h-4 w-4 shrink-0"></i> <span>Digital Products</span>
+          </div>
+          <div class="metric-value">
+            <p class="metric-main">Premium Apps</p>
+            <p class="metric-unit">&amp; Digital Products</p>
+          </div>
+          <p class="metric-description">Through <span class="font-medium text-white">DOT HERE GROUP</span>, I support customers with premium app access, software needs, vouchers, and other practical digital services.</p>
+        </div>
+
+        <div class="metric-card reveal glass rounded-2xl p-5 sm:p-6">
+          <div class="metric-label text-[11px] font-semibold uppercase tracking-[.18em] text-cyan-300">
+            <i data-lucide="graduation-cap" class="h-4 w-4 shrink-0"></i> <span>Education</span>
+          </div>
+          <div class="metric-value">
+            <p class="metric-main">3.68</p>
+            <p class="metric-unit">GPA · 4.00 Scale</p>
+          </div>
+          <p class="metric-description">Bachelor’s Degree in Communication Science from <span class="font-medium text-white">Universitas Pasundan</span>, graduated in 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="reveal mb-8 max-w-3xl sm:mb-10">
+          <p class="font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">About</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-[-.04em] text-white sm:text-5xl">A digital creative who connects visual thinking with communication strategy.</h2>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-[1.35fr_.65fr] lg:items-stretch">
+          <article class="reveal glass spotlight relative overflow-hidden rounded-3xl p-5 sm:p-7 lg:p-8">
+            <div class="relative z-10 flex h-full flex-col justify-center">
+              <p class="max-w-4xl text-base leading-7 text-slate-300 sm:text-[1.05rem] sm:leading-8">
+                I’m a Communication Science graduate with hands-on experience in graphic design, video editing, short-form content, social media, and digital marketing. I combine visual creativity with communication thinking to turn ideas into clear, engaging, and purposeful digital content.
+              </p>
+              <p class="mt-4 max-w-4xl text-sm leading-7 text-slate-400 sm:text-base">
+                I also explore front-end and AI tools to make my creative workflow more efficient, adaptable, and relevant to today’s digital environment.
+              </p>
+            </div>
+          </article>
+
+          <aside class="reveal glass rounded-3xl p-5 sm:p-6 lg:p-7">
+            <div class="flex h-full items-center gap-4">
+              <div class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-cyan-300/10 bg-cyan-400/10 text-cyan-200">
+                <i data-lucide="graduation-cap" class="h-5 w-5"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="font-display text-base font-semibold text-white">Anugrah Pratama, S.I.Kom.</p>
+                <p class="mt-1 text-sm font-medium text-cyan-200">Bachelor’s Degree in Communication Science</p>
+                <p class="mt-1 text-xs leading-5 text-slate-500">Universitas Pasundan</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 text-[11px] text-slate-400">Sep 2022 — Jun 2026</span>
+                  <span class="rounded-full border border-cyan-300/15 bg-cyan-400/[.07] px-3 py-1 text-[11px] font-medium text-cyan-200">GPA 3.68 / 4.00</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="reveal glass mt-5 rounded-3xl p-5 sm:p-6 lg:p-7">
+          <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex items-center gap-4 lg:max-w-[260px]">
+              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-cyan-300/10 bg-cyan-400/10 text-cyan-200">
+                <i data-lucide="layers-3" class="h-5 w-5"></i>
+              </div>
+              <div>
+                <p class="font-display font-semibold text-white">Core Expertise</p>
+                <p class="mt-1 text-xs leading-5 text-slate-500">Key areas I work across.</p>
+              </div>
+            </div>
+
+            <div class="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+              <div class="flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[.035] px-3 py-2 text-xs font-medium text-slate-300">
+                <i data-lucide="palette" class="h-4 w-4 shrink-0 text-cyan-300"></i><span>Graphic Design</span>
+              </div>
+              <div class="flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[.035] px-3 py-2 text-xs font-medium text-slate-300">
+                <i data-lucide="clapperboard" class="h-4 w-4 shrink-0 text-cyan-300"></i><span>Video Editing</span>
+              </div>
+              <div class="flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[.035] px-3 py-2 text-xs font-medium text-slate-300">
+                <i data-lucide="share-2" class="h-4 w-4 shrink-0 text-cyan-300"></i><span>Social Media</span>
+              </div>
+              <div class="flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[.035] px-3 py-2 text-xs font-medium text-slate-300">
+                <i data-lucide="smartphone" class="h-4 w-4 shrink-0 text-cyan-300"></i><span>Short-Form</span>
+              </div>
+              <div class="flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[.035] px-3 py-2 text-xs font-medium text-slate-300">
+                <i data-lucide="megaphone" class="h-4 w-4 shrink-0 text-cyan-300"></i><span>Digital Marketing</span>
+              </div>
+              <div class="flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/[.035] px-3 py-2 text-xs font-medium text-slate-300">
+                <i data-lucide="panel-top" class="h-4 w-4 shrink-0 text-cyan-300"></i><span>UI Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div class="max-w-3xl">
+            <p class="font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">Featured Projects</p>
+            <h2 class="mt-3 font-display text-3xl font-bold tracking-[-.04em] text-white sm:text-5xl">Selected work across design, video & digital.</h2>
+            <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">A temporary showcase layout so you can already present your work visually. Later, you can replace each preview area with your real portfolio cover designs.</p>
+          </div>
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[.04] px-5 py-3 text-sm font-medium text-slate-200 transition hover:-translate-y-1 hover:border-cyan-300/30 hover:text-white">
+            View All Projects <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+
+        <div class="mt-10 project-showcase-grid xl:grid xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-7">
+          <div class="grid gap-6 md:grid-cols-2">
+            <article class="project-card reveal glass overflow-hidden rounded-3xl p-3">
+              <div class="project-preview project-preview--dsi rounded-[1.25rem] p-4 sm:p-5">
+                <div class="project-badge project-badge--stat">100K+ Views</div>
+                <button class="project-icon-button" type="button" aria-label="Short-form content preview"><i data-lucide="clapperboard" class="h-4 w-4"></i></button>
+                <div class="project-preview__phones">
+                  <div class="phone-card phone-card--one"><span>3 CARA</span></div>
+                  <div class="phone-card phone-card--two"><span>97%</span></div>
+                  <div class="phone-card phone-card--three"><span>CUMA</span></div>
+                  <div class="phone-card phone-card--four"><span>EDIT</span></div>
+                </div>
+              </div>
+              <div class="p-4 pt-5 sm:p-5 sm:pt-6">
+                <div class="flex items-start justify-between gap-3"><p class="text-xs font-semibold uppercase tracking-[.16em] text-white/55">Video Editor · DSI Agency</p><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 text-xs text-white/65">Mar 2026 — Present</span></div>
+                <h3 class="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-[2rem]">Short-Form Content</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Editing vertical content for multiple TikTok media accounts across news and current affairs, from raw footage to captions, thumbnails, and audience-focused visual pacing.</p>
+                <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Video Editing</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Short-Form</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Thumbnails</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Visual Storytelling</span></div>
+                <div class="mt-5 flex items-center justify-end"><span class="inline-flex items-center gap-2 text-sm font-medium text-cyan-300">View Project <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal glass overflow-hidden rounded-3xl p-3">
+              <div class="project-preview project-preview--maju rounded-[1.25rem] p-4 sm:p-5">
+                <div class="project-badge project-badge--stat">30+ Designs</div>
+                <button class="project-icon-button" type="button" aria-label="Campaign design preview"><i data-lucide="palette" class="h-4 w-4"></i></button>
+                <div class="project-preview__tiles">
+                  <div class="design-tile tall"></div>
+                  <div class="design-tile"></div>
+                  <div class="design-tile"></div>
+                  <div class="design-tile wide"></div>
+                  <div class="design-tile"></div>
+                  <div class="design-tile"></div>
+                </div>
+              </div>
+              <div class="p-4 pt-5 sm:p-5 sm:pt-6">
+                <div class="flex items-start justify-between gap-3"><p class="text-xs font-semibold uppercase tracking-[.16em] text-white/55">Graphic Designer Intern · Maju Group</p><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 text-xs text-white/65">Aug — Sep 2026</span></div>
+                <h3 class="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-[2rem]">Campaign & Social Media Design</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Produced social media designs, product mockups, and campaign assets while supporting TOFU, MOFU, and BOFU content execution with the digital marketing team.</p>
+                <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Graphic Design</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Campaign Design</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">TOFU · MOFU · BOFU</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Product Mockup</span></div>
+                <div class="mt-5 flex items-center justify-end"><span class="inline-flex items-center gap-2 text-sm font-medium text-cyan-300">View Project <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal glass overflow-hidden rounded-3xl p-3">
+              <div class="project-preview project-preview--imlc rounded-[1.25rem] p-4 sm:p-5">
+                <div class="project-badge project-badge--label">Live Production</div>
+                <button class="project-icon-button" type="button" aria-label="Competition UI preview"><i data-lucide="gamepad-2" class="h-4 w-4"></i></button>
+                <div class="scoreboard-ui">
+                  <div class="scoreboard-ui__top"><span>ILKOM UNPAS</span><span class="score-pill">0</span><span>VS</span><span class="score-pill score-pill--alt">1</span><span>STMIK IKMI</span></div>
+                  <div class="scoreboard-ui__grid">
+                    <div class="draft-column"></div><div class="draft-column"></div><div class="draft-column"></div><div class="draft-column"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 pt-5 sm:p-5 sm:pt-6">
+                <div class="flex items-start justify-between gap-3"><p class="text-xs font-semibold uppercase tracking-[.16em] text-white/55">UI Designer & Multimedia · Universitas Pasundan</p><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 text-xs text-white/65">May — Jun 2025</span></div>
+                <h3 class="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-[2rem]">ILKOM UNPAS Mobile Legends Competition</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Designed the tournament interface and multimedia visuals, including scoreboards, draft picks, roster displays, MVP stats, and live production layouts.</p>
+                <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">UI Design</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Multimedia</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">HTML · CSS · JS</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Live Production</span></div>
+                <div class="mt-5 flex items-center justify-end"><span class="inline-flex items-center gap-2 text-sm font-medium text-cyan-300">View Project <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal glass overflow-hidden rounded-3xl p-3">
+              <div class="project-preview project-preview--mang rounded-[1.25rem] p-4 sm:p-5">
+                <div class="project-badge project-badge--label">Academic Project</div>
+                <button class="project-icon-button" type="button" aria-label="Mobile app preview"><i data-lucide="smartphone" class="h-4 w-4"></i></button>
+                <div class="project-preview__mobiles">
+                  <div class="mobile-mockup"><div class="mobile-screen"></div></div>
+                  <div class="mobile-mockup featured"><div class="mobile-screen mobile-screen--feature"></div></div>
+                  <div class="mobile-mockup"><div class="mobile-screen mobile-screen--light"></div></div>
+                </div>
+              </div>
+              <div class="p-4 pt-5 sm:p-5 sm:pt-6">
+                <div class="flex items-start justify-between gap-3"><p class="text-xs font-semibold uppercase tracking-[.16em] text-white/55">UI Designer · Academic Project</p><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 text-xs text-white/65">May — Jun 2025</span></div>
+                <h3 class="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-[2rem]">Mang Jasur Mobile App</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Designed an end-to-end home service booking app concept in Figma, covering user flows, wireframes, design system elements, and high-fidelity prototypes.</p>
+                <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">UI Design</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Figma</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Wireframe</span><span class="rounded-full bg-white/[.06] px-3 py-1 text-xs text-slate-300">Prototype</span></div>
+                <div class="mt-5 flex items-center justify-end"><span class="inline-flex items-center gap-2 text-sm font-medium text-cyan-300">View Project <i data-lucide="arrow-right" class="h-4 w-4"></i></span></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="project-sidebar reveal glass mt-6 overflow-hidden rounded-3xl p-4 sm:p-5 xl:sticky xl:top-28 xl:mt-0 xl:h-fit">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-[11px] font-semibold uppercase tracking-[.16em] text-white/55">Video Editor · DSI Agency</p>
+                <h3 class="mt-3 font-display text-[1.75rem] font-bold tracking-[-.03em] text-white">Short-Form Content</h3>
+              </div>
+              <span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 text-xs text-white/65">Mar 2026 — Present</span>
+            </div>
+            <p class="mt-4 text-sm leading-7 text-slate-400">A sample detail panel to show how one project can be expanded. Later, you can replace this with a real modal or dedicated project page containing your actual work and case study.</p>
+
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <div class="glass-soft rounded-2xl p-4"><p class="text-2xl font-bold text-white">100K+</p><p class="mt-1 text-xs uppercase tracking-[.12em] text-slate-500">Organic Views</p></div>
+              <div class="glass-soft rounded-2xl p-4"><p class="text-2xl font-bold text-white">30+</p><p class="mt-1 text-xs uppercase tracking-[.12em] text-slate-500">Videos Produced</p></div>
+            </div>
+
+            <div class="mt-6">
+              <p class="text-xs font-semibold uppercase tracking-[.16em] text-cyan-300">Selected Works</p>
+              <div class="mt-3 grid grid-cols-3 gap-3">
+                <div class="sidebar-thumb sidebar-thumb--one"><span>3 CARA</span></div>
+                <div class="sidebar-thumb sidebar-thumb--two"><span>97%</span></div>
+                <div class="sidebar-thumb sidebar-thumb--three"><span>CUMA</span></div>
+                <div class="sidebar-thumb sidebar-thumb--four"><span>CARI</span></div>
+                <div class="sidebar-thumb sidebar-thumb--five"><span>KESALAHAN</span></div>
+                <div class="sidebar-thumb sidebar-thumb--six"><span>BRANDING</span></div>
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-5">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.16em] text-cyan-300">My Role</p>
+                <p class="mt-2 text-sm text-slate-300">Video Editor / Clipper</p>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.16em] text-cyan-300">What I Did</p>
+                <ul class="mt-2 space-y-2 text-sm text-slate-300">
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 text-cyan-300"></i><span>Video editing & pacing</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 text-cyan-300"></i><span>Caption & subtitle styling</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 text-cyan-300"></i><span>Supporting visuals & B-roll</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 text-cyan-300"></i><span>Thumbnail design & content adaptation</span></li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.16em] text-cyan-300">Tools</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tool-chip">Pr</span>
+                  <span class="tool-chip">Ae</span>
+                  <span class="tool-chip">Ps</span>
+                  <span class="tool-chip">CapCut</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="reveal mb-8 max-w-3xl sm:mb-10">
+          <p class="font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">Skills & Tools</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-[-.04em] text-white sm:text-5xl">A practical toolkit across design, content, web, and AI.</h2>
+          <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">Tap or click a skill to interact with it.</p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div class="reveal glass rounded-3xl p-5 sm:p-7">
+            <div class="mb-5 flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-200"><i data-lucide="palette" class="h-5 w-5"></i></div><div><h3 class="font-display text-lg font-semibold">Design & UI</h3><p class="mt-1 text-xs text-slate-500">Visual design & interface work</p></div></div>
+            <div class="skill-grid">
+              <button type="button" class="skill-pill skill-chip" data-skill="Adobe Photoshop"><span class="skill-logo brand-app adobe-ps"><span>Ps</span></span><span>Adobe Photoshop</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Adobe Illustrator"><span class="skill-logo brand-app adobe-ai"><span>Ai</span></span><span>Adobe Illustrator</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Figma"><span class="skill-logo figma-mark"><svg viewBox="0 0 38 57" role="img"><path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 9.5 9.5H19v-9.5Z"/><path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z"/><path fill="#FF7262" d="M0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5Z"/><path fill="#F24E1E" d="M19 0h9.5a9.5 9.5 0 1 1 0 19H19V0Z"/><path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 1 9.5 19H19v19H9.5A9.5 9.5 0 0 1 0 28.5Z"/></svg></span><span>Figma</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Canva"><span class="skill-logo brand-logo canva-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><defs><linearGradient id="canvaG" x1="3" y1="3" x2="29" y2="29"><stop stop-color="#00C4CC"/><stop offset=".52" stop-color="#2A89DA"/><stop offset="1" stop-color="#7D2AE8"/></linearGradient></defs><circle cx="16" cy="16" r="15" fill="url(#canvaG)"/><path d="M20.9 10.7c-1.2-1.1-2.6-1.7-4.3-1.7-4 0-7.2 3.1-7.2 7.2 0 3.8 2.8 6.8 6.8 6.8 2 0 3.7-.6 5-1.9" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg></span><span>Canva</span></button>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-3xl p-5 sm:p-7">
+            <div class="mb-5 flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-200"><i data-lucide="clapperboard" class="h-5 w-5"></i></div><div><h3 class="font-display text-lg font-semibold">Video & Motion</h3><p class="mt-1 text-xs text-slate-500">Editing, motion & live production</p></div></div>
+            <div class="skill-grid">
+              <button type="button" class="skill-pill skill-chip" data-skill="Adobe Premiere Pro"><span class="skill-logo brand-app adobe-pr"><span>Pr</span></span><span>Adobe Premiere Pro</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Adobe After Effects"><span class="skill-logo brand-app adobe-ae"><span>Ae</span></span><span>Adobe After Effects</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="CapCut"><span class="skill-logo brand-logo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 8.5h20M6 23.5h20M8 9l16 14M24 9L8 23" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>CapCut</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="OBS Studio"><span class="skill-logo brand-logo obs-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#17191f" stroke="#fff" stroke-opacity=".35"/><path d="M16 7.2c2.8.4 5 2.8 5 5.7 0 .8-.2 1.6-.5 2.3-1-1.4-2.6-2.3-4.5-2.3-.8 0-1.5.2-2.2.4A5.9 5.9 0 0 1 16 7.2Zm-7.5 13c-1.1-2.6-.1-5.7 2.4-7.2.7-.4 1.5-.7 2.3-.8-.7 1.6-.6 3.5.4 5.1.4.7 1 1.3 1.6 1.7a5.9 5.9 0 0 1-6.7 1.2Zm15 .1c-1.7 2.3-4.8 3-7.3 1.5-.7-.4-1.3-1-1.8-1.6 1.7-.2 3.3-1.2 4.2-2.9.4-.7.6-1.5.7-2.2a5.9 5.9 0 0 1 4.2 5.2Z" fill="#fff"/></svg></span><span>OBS Studio</span></button>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-3xl p-5 sm:p-7">
+            <div class="mb-5 flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-200"><i data-lucide="code-2" class="h-5 w-5"></i></div><div><h3 class="font-display text-lg font-semibold">Web & Productivity</h3><p class="mt-1 text-xs text-slate-500">Front-end basics & everyday workflow</p></div></div>
+            <div class="skill-grid">
+              <button type="button" class="skill-pill skill-chip" data-skill="HTML"><span class="skill-logo brand-app html-app"><span>5</span></span><span>HTML</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="CSS"><span class="skill-logo brand-app css-app"><span>3</span></span><span>CSS</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="JavaScript"><span class="skill-logo brand-app js-app"><span>JS</span></span><span>JavaScript</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Visual Studio Code"><span class="skill-logo brand-img-transparent"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="Visual Studio Code logo" loading="lazy"></span><span>Visual Studio Code</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Google Workspace"><span class="skill-logo brand-logo google-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M21.4 12.2c0-.7-.1-1.4-.2-2.1H12v4h5.3a4.6 4.6 0 0 1-2 2.9v2.6h3.2c1.9-1.8 2.9-4.4 2.9-7.4Z"/><path fill="#34A853" d="M12 21.8c2.7 0 5-.9 6.6-2.4L15.4 17c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.8-5.6-4.2H3.1v2.7A10 10 0 0 0 12 21.8Z"/><path fill="#FBBC05" d="M6.4 13.7a6 6 0 0 1 0-3.5V7.5H3.1a10 10 0 0 0 0 8.9l3.3-2.7Z"/><path fill="#EA4335" d="M12 6.1c1.5 0 2.8.5 3.9 1.5l2.9-2.8A9.8 9.8 0 0 0 3.1 7.5l3.3 2.7C7.2 7.8 9.4 6.1 12 6.1Z"/></svg></span><span>Google Workspace</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Microsoft 365"><span class="skill-logo brand-logo microsoft-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#F25022" d="M2 2h9v9H2z"/><path fill="#7FBA00" d="M13 2h9v9h-9z"/><path fill="#00A4EF" d="M2 13h9v9H2z"/><path fill="#FFB900" d="M13 13h9v9h-9z"/></svg></span><span>Microsoft 365</span></button>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-3xl p-5 sm:p-7">
+            <div class="mb-5 flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-200"><i data-lucide="megaphone" class="h-5 w-5"></i></div><div><h3 class="font-display text-lg font-semibold">Social & Digital</h3><p class="mt-1 text-xs text-slate-500">Content, strategy & audience</p></div></div>
+            <div class="skill-grid">
+              <button type="button" class="skill-pill skill-chip" data-skill="Social Media Management"><span class="skill-logo skill-logo-lucide"><i data-lucide="share-2"></i></span><span>Social Media Management</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Content Strategy"><span class="skill-logo skill-logo-lucide"><i data-lucide="layout-list"></i></span><span>Content Strategy</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Digital Marketing"><span class="skill-logo skill-logo-lucide"><i data-lucide="chart-no-axes-combined"></i></span><span>Digital Marketing</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Meta Business Suite"><span class="skill-logo brand-logo meta-mark" aria-hidden="true"><svg viewBox="0 0 32 20"><path d="M3 15.5C5.2 7.5 7.5 3.4 10.8 3.4c4.4 0 6.7 9.5 10 9.5 2.1 0 3.4-2.2 4.3-4.8.9-2.7 1.7-4.7 3.2-4.7 1.4 0 2.3 2 3.1 4.6" fill="none" stroke="#0787F7" stroke-width="2.4" stroke-linecap="round"/></svg></span><span>Meta Business Suite</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Visual Storytelling"><span class="skill-logo skill-logo-lucide"><i data-lucide="clapperboard"></i></span><span>Visual Storytelling</span></button>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-3xl p-5 sm:p-7">
+            <div class="mb-5 flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-200"><i data-lucide="users" class="h-5 w-5"></i></div><div><h3 class="font-display text-lg font-semibold">Professional</h3><p class="mt-1 text-xs text-slate-500">How I collaborate & solve problems</p></div></div>
+            <div class="skill-grid">
+              <button type="button" class="skill-pill skill-chip" data-skill="Creative Leadership"><span class="skill-logo skill-logo-lucide"><i data-lucide="sparkles"></i></span><span>Creative Leadership</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Communication"><span class="skill-logo skill-logo-lucide"><i data-lucide="messages-square"></i></span><span>Communication</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Collaboration"><span class="skill-logo skill-logo-lucide"><i data-lucide="users-round"></i></span><span>Collaboration</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Problem Solving"><span class="skill-logo skill-logo-lucide"><i data-lucide="puzzle"></i></span><span>Problem Solving</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Time Management"><span class="skill-logo skill-logo-lucide"><i data-lucide="clock-3"></i></span><span>Time Management</span></button>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-3xl p-5 sm:p-7">
+            <div class="mb-5 flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-200"><i data-lucide="brain-circuit" class="h-5 w-5"></i></div><div><h3 class="font-display text-lg font-semibold">AI & Creative Tools</h3><p class="mt-1 text-xs text-slate-500">AI-assisted ideation & production workflow</p></div></div>
+            <div class="skill-grid">
+              <button type="button" class="skill-pill skill-chip" data-skill="ChatGPT"><span class="skill-logo ai-brand"><img src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/openai.png" alt="ChatGPT logo" loading="lazy"></span><span>ChatGPT</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Claude"><span class="skill-logo ai-brand"><img src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/claude-color.png" alt="Claude logo" loading="lazy"></span><span>Claude</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Gemini"><span class="skill-logo ai-brand"><img src="https://unpkg.com/@lobehub/icons-static-png@latest/dark/gemini-color.png" alt="Gemini logo" loading="lazy"></span><span>Gemini</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="DeepSeek"><span class="skill-logo ai-brand"><img src="https://cdn.simpleicons.org/deepseek/4D6BFE" alt="DeepSeek logo" loading="lazy"></span><span>DeepSeek</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Cursor"><span class="skill-logo ai-brand"><img src="https://cdn.simpleicons.org/cursor/FFFFFF" alt="Cursor logo" loading="lazy"></span><span>Cursor</span></button>
+              <button type="button" class="skill-pill skill-chip" data-skill="Replit"><span class="skill-logo ai-brand"><img src="https://cdn.simpleicons.org/replit/F26207" alt="Replit logo" loading="lazy"></span><span>Replit</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="skillToast" class="skill-toast" role="status" aria-live="polite"><span class="skill-toast-dot"></span><span id="skillToastText">Skill selected</span></div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="reveal mb-8 max-w-3xl sm:mb-10">
+          <p class="font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">Professional Experience</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-[-.04em] text-white sm:text-5xl">Creative experience built across design, content, marketing, and digital services.</h2>
+          <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">A focused view of the roles where I’ve applied visual communication, content production, and digital thinking in real projects and day-to-day workflows.</p>
+        </div>
+
+        <div class="reveal mb-5 flex items-center justify-between gap-4">
+          <div><p class="text-xs font-semibold uppercase tracking-[.18em] text-cyan-300">Current Roles</p><p class="mt-1 text-sm text-slate-500">The work I’m actively contributing to today.</p></div>
+          <span class="hidden rounded-full border border-cyan-300/15 bg-cyan-300/[.06] px-3 py-1 text-[11px] font-medium text-cyan-100 sm:inline-flex">Active</span>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <article class="reveal glass spotlight relative flex h-full flex-col overflow-hidden rounded-3xl p-6 sm:p-7">
+            <div class="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/20 to-transparent"></div>
+            <div class="flex min-h-[34px] flex-wrap items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/[.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[.12em] text-cyan-200"><span class="h-1.5 w-1.5 rounded-full bg-cyan-300"></span> Current</span>
+              <span class="text-xs font-medium text-slate-500">Mar 2026 — Present</span>
+            </div>
+            <div class="mt-5 min-h-[82px]"><h3 class="font-display text-xl font-semibold tracking-[-.02em] text-white">Video Editor · Short-Form Content</h3><p class="mt-1.5 text-sm font-medium text-cyan-200">DSI Agency · Freelance · Remote</p></div>
+            <p class="mt-4 flex-1 text-sm leading-7 text-slate-400">Produce and edit short-form vertical content for multiple TikTok media accounts, shaping raw footage through pacing, captions, supporting visuals, thumbnails, and clear visual hierarchy.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">100K+ Organic Views</span><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">Short-Form Content</span></div>
+          </article>
+
+          <article class="reveal glass spotlight relative flex h-full flex-col overflow-hidden rounded-3xl p-6 sm:p-7">
+            <div class="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-indigo-300/70 via-indigo-300/20 to-transparent"></div>
+            <div class="flex min-h-[34px] flex-wrap items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border border-indigo-300/15 bg-indigo-300/[.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-[.12em] text-indigo-200"><i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Founder</span>
+              <span class="text-xs font-medium text-slate-500">Nov 2025 — Present</span>
+            </div>
+            <div class="mt-5 min-h-[82px]"><h3 class="font-display text-xl font-semibold tracking-[-.02em] text-white">Founder & Digital Services Specialist</h3><p class="mt-1.5 text-sm font-medium text-cyan-200">Dot Here Group · Self-Employed · Bandung</p></div>
+            <p class="mt-4 flex-1 text-sm leading-7 text-slate-400">Manage a digital and IT services business covering customer consultation, device and software troubleshooting, service coordination, branding, promotional content, digital products, and after-sales support.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">IT Services</span><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">Digital Products</span></div>
+          </article>
+        </div>
+
+        <div class="reveal mb-5 mt-12 sm:mt-14"><p class="text-xs font-semibold uppercase tracking-[.18em] text-cyan-300">Previous Experience</p><p class="mt-1 text-sm text-slate-500">Roles that strengthened my social media, campaign, and digital marketing foundation.</p></div>
+        <div class="space-y-4">
+          <article class="reveal glass group relative overflow-hidden rounded-3xl p-5 transition duration-300 sm:p-6 lg:p-7">
+            <div class="absolute inset-y-5 left-0 w-0.5 rounded-full bg-cyan-300/70"></div>
+            <div class="grid gap-4 lg:grid-cols-[155px_minmax(0,1fr)_auto] lg:items-start lg:gap-7">
+              <div class="pt-0.5"><p class="text-xs font-semibold uppercase tracking-[.14em] text-slate-500">Aug — Sep</p><p class="mt-1 font-display text-lg font-semibold text-white">2026</p></div>
+              <div class="min-w-0"><h3 class="font-display text-lg font-semibold tracking-[-.02em] text-white sm:text-xl">Graphic Designer Intern</h3><p class="mt-1 text-sm font-medium text-cyan-200">Maju Group · Internship · Hybrid</p><p class="mt-3 max-w-3xl text-sm leading-7 text-slate-400">Produced 30+ social media designs, promotional visuals, product mockups, and campaign assets while supporting TOFU, MOFU, and BOFU content with the digital marketing team.</p></div>
+              <div class="flex flex-wrap gap-2 lg:max-w-[210px] lg:justify-end"><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">30+ Designs</span><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">Campaign Design</span></div>
+            </div>
+          </article>
+          <article class="reveal glass group relative overflow-hidden rounded-3xl p-5 transition duration-300 sm:p-6 lg:p-7">
+            <div class="absolute inset-y-5 left-0 w-0.5 rounded-full bg-cyan-300/55"></div>
+            <div class="grid gap-4 lg:grid-cols-[155px_minmax(0,1fr)_auto] lg:items-start lg:gap-7">
+              <div class="pt-0.5"><p class="text-xs font-semibold uppercase tracking-[.14em] text-slate-500">Jun — Oct</p><p class="mt-1 font-display text-lg font-semibold text-white">2025</p></div>
+              <div class="min-w-0"><h3 class="font-display text-lg font-semibold tracking-[-.02em] text-white sm:text-xl">Graphic Designer & Social Media Manager</h3><p class="mt-1 text-sm font-medium text-cyan-200">Tanos Indonesia · Freelance · Hybrid</p><p class="mt-3 max-w-3xl text-sm leading-7 text-slate-400">Designed social media feeds, product visuals, promotional materials, and campaign assets while managing content planning, scheduling, publishing, captions, and daily social media activity.</p></div>
+              <div class="flex flex-wrap gap-2 lg:max-w-[200px] lg:justify-end"><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">Social Media</span><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">Meta Business Suite</span></div>
+            </div>
+          </article>
+          <article class="reveal glass group relative overflow-hidden rounded-3xl p-5 transition duration-300 sm:p-6 lg:p-7">
+            <div class="absolute inset-y-5 left-0 w-0.5 rounded-full bg-cyan-300/35"></div>
+            <div class="grid gap-4 lg:grid-cols-[155px_minmax(0,1fr)_auto] lg:items-start lg:gap-7">
+              <div class="pt-0.5"><p class="text-xs font-semibold uppercase tracking-[.14em] text-slate-500">Feb — Jun</p><p class="mt-1 font-display text-lg font-semibold text-white">2025</p></div>
+              <div class="min-w-0"><h3 class="font-display text-lg font-semibold tracking-[-.02em] text-white sm:text-xl">Graphic Designer & Digital Marketing Intern</h3><p class="mt-1 text-sm font-medium text-cyan-200">PT. Rajakon Teknik · Internship · On-site</p><p class="mt-3 max-w-3xl text-sm leading-7 text-slate-400">Designed social content, brochures, promotional materials, website banners, product visuals, videos, and motion assets while collaborating on campaign execution that contributed to a 25% increase in Instagram engagement.</p></div>
+              <div class="flex flex-wrap gap-2 lg:max-w-[200px] lg:justify-end"><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">+25% Engagement</span><span class="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs text-slate-300">Digital Marketing</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="reveal mt-16">
+          <p class="font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">Leadership & Community Experience</p>
+          <h3 class="mt-3 max-w-3xl font-display text-2xl font-bold tracking-[-.03em] text-white sm:text-3xl">Leadership, teamwork, and creative communities that shaped how I collaborate.</h3>
+          <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">A mix of leadership, media, design, and community roles that strengthened my communication, coordination, and multidisciplinary creative experience.</p>
+        </div>
+
+        <!-- Featured leadership -->
+        <div class="mt-7 grid gap-4 lg:grid-cols-2">
+          <article class="reveal glass spotlight relative flex h-full flex-col overflow-hidden rounded-3xl border-cyan-300/15 p-5 sm:p-6 lg:p-7">
+            <div class="absolute inset-y-6 left-0 w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/20 to-transparent"></div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <span class="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/[.06] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[.14em] text-cyan-200">
+                <i data-lucide="crown" class="h-3.5 w-3.5"></i> Leadership
+              </span>
+              <span class="w-fit rounded-full border border-white/10 bg-white/[.035] px-3 py-1 text-[11px] font-medium text-slate-400">Jul 2024 — Jan 2026</span>
+            </div>
+            <div class="mt-5 min-w-0">
+              <h4 class="font-display text-lg font-semibold leading-snug text-white sm:text-xl">Head of Media, Information & Communications</h4>
+              <p class="mt-1.5 text-sm font-medium leading-6 text-cyan-200">Ikatan Keluarga Pelajar Belitong Bandung</p>
+            </div>
+            <p class="mt-4 text-sm leading-7 text-slate-400">Led media and communication activities, coordinating social media content, digital publications, event visuals, information distribution, and creative workflows across the organization.</p>
+            <div class="mt-auto flex flex-wrap gap-2 pt-5">
+              <span class="rounded-full border border-white/10 bg-white/[.035] px-2.5 py-1 text-[11px] text-slate-400">Media Leadership</span>
+              <span class="rounded-full border border-white/10 bg-white/[.035] px-2.5 py-1 text-[11px] text-slate-400">Communication</span>
+            </div>
+          </article>
+
+          <article class="reveal glass spotlight relative flex h-full flex-col overflow-hidden rounded-3xl border-cyan-300/15 p-5 sm:p-6 lg:p-7">
+            <div class="absolute inset-y-6 left-0 w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/20 to-transparent"></div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <span class="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/[.06] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[.14em] text-cyan-200">
+                <i data-lucide="users-round" class="h-3.5 w-3.5"></i> Leadership
+              </span>
+              <span class="w-fit rounded-full border border-white/10 bg-white/[.035] px-3 py-1 text-[11px] font-medium text-slate-400">Jun 2023 — Jun 2024</span>
+            </div>
+            <div class="mt-5 min-w-0">
+              <h4 class="font-display text-lg font-semibold leading-snug text-white sm:text-xl">Dormitory Chairperson</h4>
+              <p class="mt-1.5 text-sm font-medium leading-6 text-cyan-200">Asrama Beregong Belitung Timur Bandung</p>
+            </div>
+            <p class="mt-4 text-sm leading-7 text-slate-400">Led resident coordination and internal communication, organized community activities, supported shared day-to-day needs, and served as a liaison among residents.</p>
+            <div class="mt-auto flex flex-wrap gap-2 pt-5">
+              <span class="rounded-full border border-white/10 bg-white/[.035] px-2.5 py-1 text-[11px] text-slate-400">Community Leadership</span>
+              <span class="rounded-full border border-white/10 bg-white/[.035] px-2.5 py-1 text-[11px] text-slate-400">Coordination</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Creative & community roles -->
+        <div class="reveal mb-4 mt-10 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[.16em] text-cyan-300">Creative & Community Roles</p>
+            <p class="mt-1 text-sm text-slate-500">Design, media, technology, and editorial experience across campus and community teams.</p>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          <article class="reveal glass group flex h-full min-h-[190px] flex-col rounded-2xl p-5 transition duration-300 lg:col-span-2 sm:p-6">
+            <div class="flex items-start justify-between gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-300/10 bg-cyan-300/[.06] text-cyan-200"><i data-lucide="landmark" class="h-4 w-4"></i></span>
+              <span class="text-right text-[11px] font-medium leading-5 text-slate-500">Aug 2024 — Present</span>
+            </div>
+            <div class="mt-4 min-w-0">
+              <h4 class="font-display text-base font-semibold leading-snug text-white sm:text-lg">Digital Media & Technology</h4>
+              <p class="mt-1.5 text-sm leading-6 text-cyan-200">Sahabat Museum Konperensi Asia Afrika (SahabIT)</p>
+            </div>
+            <p class="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[.11em] text-slate-500">Volunteer · Creative & Technology</p>
+          </article>
+
+          <article class="reveal glass group flex h-full min-h-[190px] flex-col rounded-2xl p-5 transition duration-300 lg:col-span-2 sm:p-6">
+            <div class="flex items-start justify-between gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-300/10 bg-cyan-300/[.06] text-cyan-200"><i data-lucide="clapperboard" class="h-4 w-4"></i></span>
+              <span class="text-right text-[11px] font-medium leading-5 text-slate-500">Sep 2024 — Jun 2025</span>
+            </div>
+            <div class="mt-4 min-w-0">
+              <h4 class="font-display text-base font-semibold leading-snug text-white sm:text-lg">Video Editor</h4>
+              <p class="mt-1.5 text-sm leading-6 text-cyan-200">BPPM Pasoendan</p>
+            </div>
+            <p class="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[.11em] text-slate-500">Editorial & Media Team</p>
+          </article>
+
+          <article class="reveal glass group flex h-full min-h-[190px] flex-col rounded-2xl p-5 transition duration-300 lg:col-span-2 sm:p-6">
+            <div class="flex items-start justify-between gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-300/10 bg-cyan-300/[.06] text-cyan-200"><i data-lucide="pen-tool" class="h-4 w-4"></i></span>
+              <span class="text-right text-[11px] font-medium leading-5 text-slate-500">Nov 2023 — Jun 2025</span>
+            </div>
+            <div class="mt-4 min-w-0">
+              <h4 class="font-display text-base font-semibold leading-snug text-white sm:text-lg">UI Designer</h4>
+              <p class="mt-1.5 text-sm leading-6 text-cyan-200">GDG On Campus Universitas Pasundan</p>
+            </div>
+            <p class="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[.11em] text-slate-500">Design Team · Tech Community</p>
+          </article>
+
+          <article class="reveal glass group flex h-full min-h-[190px] flex-col rounded-2xl p-5 transition duration-300 lg:col-span-3 sm:p-6">
+            <div class="flex items-start justify-between gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-300/10 bg-cyan-300/[.06] text-cyan-200"><i data-lucide="camera" class="h-4 w-4"></i></span>
+              <span class="text-right text-[11px] font-medium leading-5 text-slate-500">Jan 2024 — Feb 2024</span>
+            </div>
+            <div class="mt-4 min-w-0">
+              <h4 class="font-display text-base font-semibold leading-snug text-white sm:text-lg">Video Editor & Photographer</h4>
+              <p class="mt-1.5 text-sm leading-6 text-cyan-200">Laboratorium Ilmu Komunikasi UNPAS</p>
+            </div>
+            <p class="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[.11em] text-slate-500">Media Production Team</p>
+          </article>
+
+          <article class="reveal glass group flex h-full min-h-[190px] flex-col rounded-2xl p-5 transition duration-300 sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.5rem)] lg:col-span-3 lg:mx-0 lg:w-auto sm:p-6">
+            <div class="flex items-start justify-between gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-300/10 bg-cyan-300/[.06] text-cyan-200"><i data-lucide="newspaper" class="h-4 w-4"></i></span>
+              <span class="text-right text-[11px] font-medium leading-5 text-slate-500">Nov 2022 — Feb 2023</span>
+            </div>
+            <div class="mt-4 min-w-0">
+              <h4 class="font-display text-base font-semibold leading-snug text-white sm:text-lg">Media & Content</h4>
+              <p class="mt-1.5 text-sm leading-6 text-cyan-200">HIMAKOM FISIP UNPAS</p>
+            </div>
+            <p class="mt-auto pt-5 text-[11px] font-medium uppercase tracking-[.11em] text-slate-500">Press Division · Organization</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="px-4 pb-8 pt-16 sm:px-6 sm:pb-10 sm:pt-20 lg:px-8 lg:pt-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="reveal glass spotlight relative overflow-hidden rounded-[1.6rem] p-5 sm:rounded-[2rem] sm:p-8 lg:p-12">
+          <div class="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-indigo-500/15 blur-3xl"></div>
+          <div class="absolute -bottom-20 left-1/3 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl"></div>
+
+          <div class="relative grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end lg:gap-10">
+            <div>
+              <p class="font-display text-sm font-semibold uppercase tracking-[.22em] text-cyan-300">Contact</p>
+              <h2 class="mt-4 max-w-3xl font-display text-4xl font-bold tracking-[-.05em] text-white sm:text-5xl lg:text-6xl">Looking for a creative who can turn ideas into impact?</h2>
+              <p class="mt-5 max-w-xl text-base leading-8 text-slate-400">I’m currently open to creative opportunities where I can contribute across graphic design, video editing, digital content, and UI/UX. With hands-on experience in social media, short-form content, campaigns, and technology-assisted workflows, I’m ready to bring clear visual thinking, reliable execution, and fresh ideas to your team.</p>
+            </div>
+
+            <div class="grid gap-3">
+              <div class="contact-card rounded-2xl border border-cyan-300/15 bg-cyan-300/[.06] p-4 hover:border-cyan-300/25 hover:bg-cyan-300/[.08]">
+                <div class="flex min-w-0 items-center gap-3">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-300/[.09] text-cyan-100"><i data-lucide="file-text" class="h-4 w-4"></i></span>
+                  <span class="min-w-0">
+                    <span class="block text-xs text-slate-500">Curriculum Vitae</span>
+                    <span class="block text-sm font-medium text-cyan-100">Anugrah Pratama, S.I.Kom. · Graphic Designer & Digital Creative · CV 2026</span>
+                  </span>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-2">
+                  <button type="button" data-view-cv class="group inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-cyan-300 px-3 py-2.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-200">
+                    <i data-lucide="eye" class="h-4 w-4"></i> View CV
+                  </button>
+                  <button type="button" data-download-cv class="group inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[.055] px-3 py-2.5 text-sm font-semibold text-slate-200 transition hover:-translate-y-0.5 hover:bg-white/[.10] hover:text-white">
+                    <i data-lucide="download" class="h-4 w-4 transition group-hover:translate-y-0.5"></i> Download
+                  </button>
+                </div>
+              </div>
+              <a href="mailto:grahvloid@gmail.com" class="contact-card group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[.05] p-4 hover:bg-white/[.09]">
+                <span class="flex min-w-0 items-center gap-3"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[.07]"><i data-lucide="mail" class="h-4 w-4"></i></span><span class="min-w-0"><span class="block text-xs text-slate-500">Email</span><span class="block truncate text-sm font-medium text-slate-200">grahvloid@gmail.com</span></span></span>
+                <i data-lucide="arrow-up-right" class="h-4 w-4 shrink-0 text-slate-500 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"></i>
+              </a>
+              <a href="https://linkedin.com/in/grahvloid" target="_blank" rel="noreferrer" class="contact-card group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[.05] p-4 hover:bg-white/[.09]">
+                <span class="flex min-w-0 items-center gap-3"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[.07]"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg></span><span class="min-w-0"><span class="block text-xs text-slate-500">LinkedIn</span><span class="block truncate text-sm font-medium text-slate-200">linkedin.com/in/grahvloid</span></span></span>
+                <i data-lucide="arrow-up-right" class="h-4 w-4 shrink-0 text-slate-500 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"></i>
+              </a>
+              <a href="https://instagram.com/grahvloid" target="_blank" rel="noreferrer" class="contact-card group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[.05] p-4 hover:bg-white/[.09]">
+                <span class="flex min-w-0 items-center gap-3"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[.07]"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><span class="min-w-0"><span class="block text-xs text-slate-500">Instagram</span><span class="block truncate text-sm font-medium text-slate-200">@grahvloid</span></span></span>
+                <i data-lucide="arrow-up-right" class="h-4 w-4 shrink-0 text-slate-500 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"></i>
+              </a>
+              <a href="https://wa.me/6283197544925" target="_blank" rel="noreferrer" class="contact-card group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[.05] p-4 hover:bg-white/[.09]">
+                <span class="flex min-w-0 items-center gap-3"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[.07]"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2a9.84 9.84 0 0 0-8.42 14.94L2.05 22l5.2-1.52A9.95 9.95 0 1 0 12.04 2Zm0 17.98a8.05 8.05 0 0 1-4.1-1.12l-.3-.18-3.08.9.9-3-.2-.31a7.93 7.93 0 1 1 6.78 3.71Zm4.36-5.95c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19a7.2 7.2 0 0 1-1.33-1.65c-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg></span><span class="min-w-0"><span class="block text-xs text-slate-500">WhatsApp</span><span class="block truncate text-sm font-medium text-slate-200">+62 831-9754-4925</span></span></span>
+                <i data-lucide="arrow-up-right" class="h-4 w-4 shrink-0 text-slate-500 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <footer class="flex flex-col gap-3 px-2 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Anugrah Pratama, S.I.Kom. · Designed & built with curiosity.</p>
+          <a href="#home" class="inline-flex items-center gap-2 transition hover:text-white">Back to top <i data-lucide="arrow-up" class="h-4 w-4"></i></a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- In-page CV viewer: CV pages are embedded as images for reliable preview in sandboxed browsers. -->
+  <div id="cvModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/85 p-3 backdrop-blur-md sm:p-6" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" aria-hidden="true">
+    <div class="flex h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-cyan-300/15 bg-[#0b1020] shadow-[0_30px_100px_rgba(0,0,0,.55)]">
+      <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
+        <div class="min-w-0">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-300">Curriculum Vitae</p>
+          <h2 id="cvModalTitle" class="truncate text-sm font-semibold text-white sm:text-base">Anugrah Pratama, S.I.Kom. · Graphic Designer & Digital Creative · CV 2026</h2>
+        </div>
+        <div class="flex shrink-0 items-center gap-2">
+          <button type="button" data-download-cv class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[.06] px-3 text-xs font-semibold text-slate-200 transition hover:bg-white/[.10] hover:text-white sm:text-sm">
+            <i data-lucide="download" class="h-4 w-4"></i><span class="hidden sm:inline">Download</span>
+          </button>
+          <button id="closeCvModal" type="button" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[.06] text-slate-300 transition hover:bg-white/[.10] hover:text-white" aria-label="Close CV preview">
+            <i data-lucide="x" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </div>
+      <div id="cvPreviewArea" class="min-h-0 flex-1 overflow-y-auto bg-slate-200 p-2 sm:p-4">
+        <div class="mx-auto flex max-w-[900px] flex-col gap-3 sm:gap-4">
+          <div class="overflow-hidden rounded-lg bg-white shadow-[0_10px_35px_rgba(15,23,42,.22)]">
+            <img src="assets/cv-preview/page-1.png" alt="Anugrah Pratama CV page 1" class="block h-auto w-full" loading="eager" decoding="async">
+          </div>
+          <div class="overflow-hidden rounded-lg bg-white shadow-[0_10px_35px_rgba(15,23,42,.22)]">
+            <img src="assets/cv-preview/page-2.png" alt="Anugrah Pratama CV page 2" class="block h-auto w-full" loading="eager" decoding="async">
+          </div>
+          <p class="pb-2 text-center text-[11px] text-slate-500">2-page CV preview · Use Download for the original PDF</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
